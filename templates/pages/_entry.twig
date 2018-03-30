@@ -1,0 +1,23 @@
+{% extends '_layout' %}
+{% block main %}
+
+<div id="content">
+	
+
+<!-- ===================== CONTENT ===================== -->
+
+<div class="content left">
+	<div class="centered">
+	<h1 class="button ribbon">{{entry.title}}<br/></h1>
+	{{entry.pageCopy}}
+	<p>Posted by <a href="#">{{ entry.author}}</a> on {{entry.postDate | date('M d, Y')}}</p>
+	</div>
+</div>
+<div>
+
+{% set image = entry.pageimage.one() %}
+	{% if image %}
+		<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+	{% endif %}
+</div>
+{% endblock %}
