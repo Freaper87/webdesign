@@ -1,0 +1,134 @@
+{% extends '_layout' %}
+{% block main %}
+<div id="hero">
+	<video playsinline autoplay muted loop id="bgvid">
+    	<source src="vid/bg-video2.mp4" type="video/mp4">
+	</video>
+	<img src="stuff/logo-transparent.png">
+	<!--<div class="logo">CAFE CHERI</div>	-->
+	<div class="header-links">
+		<div class="link-container">
+			<a href="#cupcakes">
+				<i class="fa fa-coffee"></i>
+				Menü
+			</a>
+		</div>
+		<div class="link-container">
+			<a href="#contact">
+				<i class="fa fa-hourglass-o"></i>
+				Öffnungszeiten	
+			</a>
+		</div>
+	</div>
+</div>
+<div id="content">
+
+<!-- ===================== TEASER ===================== -->
+
+<div id="grids">
+	<div class="grid teaser">
+		<div class="image" style="background-image: url(img/coffee-2178431_640.jpg);"></div>
+		<h3>Aktuelles</h3>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</p>
+		<div class="header-links">
+		<div class="link-container">
+			<a href="#cupcakes">
+				<i class="fa fa-chevron-right"></i>
+				zu Aktuelles
+			</a>
+		</div>
+		</div>
+	</div>
+	<div class="grid teaser">
+		<div class="image" style="background-image: url(img/coffee-shop-1149361_640.jpg);"></div>
+		<h3>Menü</h3>
+		<ul>
+			<li><div class="circle"><img src="img/icons/kuchen-3.svg"></div> <span>Kuchen / Tartes</span></li>
+			<li><div class="circle"><img src="img/icons/angebote-4.svg"></div> <span>Quiche</span></li>
+			<li><div class="circle"><img src="img/icons/gebaeck-1.svg"></div> <span>Gebäck</span></li>
+			<li><div class="circle"><img src="img/icons/getraenke-11.svg"></div> <span>Getränke</span></li>
+			<li><div class="circle"><img src="img/icons/angebote-1.svg"></div> <span>Angebote</span></li>
+		</ul>
+		<div class="header-links">
+		<div class="link-container">
+			<a href="#cupcakes">
+				<i class="fa fa-chevron-right"></i>
+				zum Menü
+			</a>
+		</div>
+		</div>
+	</div>
+	<div class="grid teaser">
+		<div class="image" style="background-image: url(img/knowledge-1052011_640.jpg);"></div>
+		<h3>Kontakt</h3>
+			<table>
+				<tr>
+					<td>Dienstag-Freitag</td><td>8:00-19:00 Uhr</td>
+				</tr>
+				<tr>
+					<td>Samstag</td><td>8:00-19:00 Uhr</td>
+				</tr>
+				<tr>
+					<td>Sonntag</td><td>8:00-19:00 Uhr</td>
+				</tr>
+				<tr>
+					<td>Montag</td><td>Geschlossen</td>
+				</tr>
+			</table>
+			<p>
+				Kurze Gasse 42<br/>
+				12345 Musterstetten<br/>
+				0123/123456<br/>
+				mail@mail.mail<br/>
+				<br/>
+				Reservierungen im Kontaktformular
+			</p>
+		<div class="header-links">
+		<div class="link-container">
+			<a href="#cupcakes">
+				<i class="fa fa-chevron-right"></i>
+				zum Kontakt
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+<!-- ===================== GALLERIE ===================== -->
+
+<div class="gallery">
+
+</div>
+
+<!-- ===================== CONTENT ===================== -->
+
+<div class="content left">
+	<div class="centered">
+	<h1 class="button ribbon">Cafe Cheri <br/><span>fühlen wie in Frankreich</span></h1>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	</div>
+</div>
+<div class="content right">
+	<div class="centered">
+		<img src="img/knowledge-1052011_640.jpg" width="50%">
+	</div>
+</div>
+<div class="content left">
+<h2 class="">Referenzen</h2>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+</div>
+
+<div class="content left">
+{% for entry in craft.entries.section('blog').limit(10).all() %}
+	
+		
+	<h2><a href="{{ entry.url }}">{{entry.title}}</a></h2>
+	<h3>{{entry.blogsubtitle}}</h3>
+		{{entry.blogBody}}
+		<p>Posted by <a href="#">{{ entry.author}}</a> on {{entry.postDate | date('M d, Y')}}</p>
+	
+{% endfor %}
+</div>
+</div>
+</div>
+{% endblock %}

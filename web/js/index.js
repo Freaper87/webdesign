@@ -4,12 +4,12 @@ var $ = c.getContext('2d');
 var w = c.width = window.innerWidth;
 var h = c.height = window.innerHeight;
 var my_gradient=$.createLinearGradient(0,0,0,940);
-my_gradient.addColorStop(0,"#7953d2");
-my_gradient.addColorStop(1,"#000070");
+my_gradient.addColorStop(0,"#4036fb");
+my_gradient.addColorStop(1,"#5b53ff");
 
 var draw = function(a, b, t) {
   $.lineWidth = 0.5;
-  $.fillStyle = my_gradient; //'hsla(0,0%,70%,1)';
+  $.fillStyle = my_gradient; //'hsla(243, 96%, 60%,0.1)';
   $.fillRect(0, 0, w, h);
   for (var i = -60; i < 30; i += 1) {
     $.strokeStyle = 'hsla(85, 25%, 100%, 0.1)';

@@ -7,11 +7,17 @@
 	<script src="js/index.js"></script>
    	<div class="w wave"></div>
     <div class="herotext">
-	    <span class="handwritten">{{entry.heroslogan}}<div class="custom-hr"><span></span><div id="diamond"></div><span></span></div></span>
+	    <span class="gilroy">{{entry.heroslogan}}<div class="custom-hr"><span></span><div class="diamond"></div><span></span></div></span>
 	    <h1>{{entry.herotitle|nl2br|raw}}</h1>
 	</div>
+	<div class="geometry">
+		<svg class="hero-triangle">
+  <rect x="0" y="0" width="100%" height="100%"
+  style="fill:#fff;fill-opacity:0.1;" />
+</svg>
+	</div>
 </div>
-
+<script src="js/parallax.js"></script>
 <script type="text/javascript">
    var checkedRadio;
 	function ClearRd(o)
@@ -26,9 +32,9 @@
 	}
 </script>
 	<!-- ===================== 4-GRID ===================== -->
-	<div class="herogrid">
+	<div class="herogrid wrapper-content">
 		<h2 class="center">Lorem Ipsum</h2>
-		<div class="custom-hr"><span></span><div id="diamond"></div><span></span></div>
+		<div class="custom-hr"><span></span><div class="diamond"></div><span></span></div>
 		<div class="grid-check">
 			<input type="radio" name="accDuvidas" id="accDuvidas-1" onclick="ClearRd(this)"/>
 			<label for="accDuvidas-1">

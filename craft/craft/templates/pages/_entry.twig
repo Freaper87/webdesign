@@ -1,0 +1,22 @@
+{% extends '_layout' %}
+{% block main %}
+
+<div id="content">
+	
+
+<!-- ===================== CONTENT ===================== -->
+
+<div class="content left">
+	<div class="centered">
+	<h1 class="button ribbon">{{entry.title}}<br/></h1>
+	{{entry.pageCopy}}
+	<p>Posted by <a href="#">{{ entry.author}}</a> on {{entry.postDate | date('M d, Y')}}</p>
+	</div>
+</div>
+<div>
+
+{% for image in entry.pageCopy %}
+		<img src="{{ image }}" alt="{{ image.title }}">
+{% endfor %}
+</div>
+{% endblock %}
