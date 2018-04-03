@@ -54,7 +54,12 @@
 		{% set entries = craft.entries.section('Homepage, pages').all() %}
 		<ul id="nav">
 			{% nav entry in entries %}
-				<li {% if craft.app.request.absoluteUrl == entry.url %}class="active"{% endif %}><a href="{{entry.url}}">{{entry.title}}</a></li>
+				<li {% if craft.app.request.absoluteUrl == 
+				entry.url %}
+				class="active"
+				{% endif %}>
+					<a href="{{entry.url}}">{{entry.title}}</a>
+				</li>
 			{% endnav %}
 		</ul>
 	</nav>
@@ -62,7 +67,6 @@
 {% block main %}
 
 {% endblock %}
-
 <footer>
 	<div id="content">
 	<div class="footer_text left">
@@ -99,5 +103,7 @@
 	<a href="" target="_blank">Impressum</a> | <a href="" target="_blank">Datenschutz</a>
 </center>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/parallax.js"></script>
+<script src="js/index.js"></script>
 </html>

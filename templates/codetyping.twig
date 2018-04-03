@@ -1,0 +1,49 @@
+<div class="typeHere"> 
+  <div data-line="1">&lt;<span class="red">header</span> <span class="green">id</span><span class="red">=</span><span class="yellow">"container"</span>&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="2">&nbsp;&nbsp;&lt;<span class="red">nav</span>&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="2">&nbsp;&nbsp;&nbsp;&nbsp;&#x7B;&#x25; <span class="red">set</span> entries = </div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;craft.entries.section(<span class="yellow">'Homepage, pages'</span>).all() &#x25;&#x7D;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="red">ul</span>&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x7B;&#x25; <span class="red">nav</span> entry in entries &#x25;&#x7D;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="red">li</span> &#x7B;&#x25; <span class="red">if</span> craft.app.request.absoluteUrl ==</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.url &#x25;&#x7D;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">class</span>=<span class="yellow">"active"</span></div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x7B;&#x25; <span class="red">endif</span> &#x25;&#x7D;&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="red">a</span> href=<span class="yellow">"&#x7B;&#x7B;entry.url&#x7D;&#x7D;"</span>&gt;&#x7B;&#x7B;entry.title&#x7D;&#x7D;&lt;/<span class="red">a</span>&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="red">li</span>&gt;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x7B;&#x25; <span class="red">endnav</span> &#x25;&#x7D;</div>
+</div><br>
+<div class="typeHere">
+    <div data-line="3">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="red">ul</span>&gt;</div>
+</div><br>
+
+<div class="typeHere">
+  <div data-line="4">&nbsp;&nbsp;&lt;/<span class="red">nav</span>&gt;</div><br>
+</div><br/>
+<div class="typeHere">
+  <div data-line="5">&lt;/<span class="red">header</span>&gt;</div><br>
+</div>
