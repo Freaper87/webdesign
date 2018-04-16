@@ -1,6 +1,5 @@
 {% extends '_layout' %}
 {% block main %}
-
 <div id="content">
 	
 
@@ -13,11 +12,19 @@
 	<p>Posted by <a href="#">{{ entry.author}}</a> on {{entry.postDate | date('M d, Y')}}</p>
 	</div>
 </div>
-<div>
+{% set thumb = {
+    mode: 'crop',
+    width: 400,
+    height: 500,
+    quality: 75,
+    position: 'top-center'
+} %}
+	
+	{% set image = entry.pageimage.one() %}
 
-{% set image = entry.pageimage.one() %}
-	{% if image %}
-		<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
-	{% endif %}
+		{% if image %}
+		<img src="{{ image.getUrl(thumb) }}" width="{{ image.getWidth(thumb) }}" height="{{ image.getHeight(thumb) }}">
+		{% endif %}
+	
 </div>
 {% endblock %}

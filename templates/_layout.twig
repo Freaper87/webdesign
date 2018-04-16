@@ -15,7 +15,7 @@
 	<title>{{ seo.title }}</title>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" async href="./css/style.css">
+	{% do view.registerCssFile(siteUrl~"css/style.css") %}
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Playfair+Display" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name=viewport content="width=device-width, initial-scale=1">
@@ -46,15 +46,21 @@
 	<link rel="canonical" href="{{ craft.app.request.pathInfo }}">
 	{# SEO End #}
 	<meta http-equiv="language" content="de">
+
 </head>
 <body>
 <header>
-	<div class="logo-text"><a href="{{siteUrl}}" class="active"><img src="{{siteUrl}}svg/unravel.svg"></a></div>
+	<div class="logo-text"><a href="{{siteUrl}}" class="active"><img src="{{siteUrl}}assets/3d-rhombus.png"></a></div>
 	<nav>
 		{% set entries = craft.entries.section('Homepage, pages').all() %}
 		<ul id="nav">
 			{% nav entry in entries %}
-				<li {% if craft.app.request.absoluteUrl == entry.url %}class="active"{% endif %}><a href="{{entry.url}}">{{entry.title}}</a></li>
+				<li {% if craft.app.request.absoluteUrl == 
+				entry.url %}
+				class="active"
+				{% endif %}>
+					<a href="{{entry.url}}">{{entry.title}}</a>
+				</li>
 			{% endnav %}
 		</ul>
 	</nav>
@@ -62,19 +68,12 @@
 {% block main %}
 
 {% endblock %}
-
 <footer>
 	<div id="content">
 	<div class="footer_text left">
 		<h3>Cafe Cheri</h3>
 	<div class="content left">
-		Kurze Gasse 42 <br/>
-		12345 Musterstetten<br/> 
-		<br/>
-		<span><b>0123/123456</b></span><br/>
-		<a href="">mail@mail.mail</a><br/><br/>
-		<a href=""><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-		<br/><br/>	
+		{{ footer.textfield }}
 	</div>
 	<div class="content right">
 		<table>
@@ -99,4 +98,7 @@
 	<a href="" target="_blank">Impressum</a> | <a href="" target="_blank">Datenschutz</a>
 </center>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/index.js"></script>
 </html>
